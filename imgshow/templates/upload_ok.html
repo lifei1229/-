@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用RseNet分类图像演示平台</title>
+</head>
+<body>
+    <h1>使用ResNet分类图像演示平台</h1>
+    <form action="" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file" style="margin-top:20px;"/>
+        <br>
+        <h4>请输入你认为这张图片的分类标签：</h4>
+        <input type="text" class="txt_input" name="name"  value="请输入pokeman类别" style="margin-top:10px;"/>
+        <input type="submit" value="上传" class="button-new" style="margin-top:15px;"/>
+    </form>
+    <h2>阁下认为这张照片是：{{userinput}}！</h2>
+    <img src="{{ url_for('static', filename= './images/test.jpg',_t=val1) }}" width="400" height="400" alt="你的图片被外星人劫持了～～"/>
+    <h2>我们使用ResNet模型预测，有{{classpro}}概率认为它是 {{classresult}}</h2>
+</body>
+</html>
